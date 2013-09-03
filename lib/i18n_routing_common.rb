@@ -39,7 +39,7 @@ module I18nRouting
       n = translation_for(name, :path_names, pn)
       n = nil if n == pn.to_s
       # Get default path_names in path_names scope if no path_names found
-      n ||= Admin::AppConfig.get("#{I18n.locale}.routes.#{path_names}.#{pn}") || name.to_s
+      n ||= Admin::AppConfig.get("#{I18n.locale}.routes.path_names.#{pn}") || name.to_s
 
       h[pn] = n if n and n != name.to_s
     end
